@@ -1,14 +1,17 @@
 #/usr/bin/python3
 # -*- coding:utf-8 -*-
+try:
+	from twilio.rest import TwilioRestClient
+except:
+	print "pip install twilio="
 
-from twilio.rest import TwilioRestClient
 import os, sys
 import time
 
 os.system('clear')
-ACCOUNT_SID = ""
-AUTH_TOKEN = ""
-from_ = ""
+ACCOUNT_SID = "AC1e46be9639857b6ce6ef59fa8aec2fbd"
+AUTH_TOKEN = "b0f05380496d3adc164af2ee6612dd75"
+from_ = "+14159642806"
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
@@ -157,16 +160,21 @@ def Ma1n():
 
 
 def SendMessage(to):
-	message = client.messages.create(
-	    body = body, 	
-    	to = to,
-    	from_ = from_,
-	)
-	print('')
-	print(verde +'✉ SMS - Flooder ✉ %s' % to)
-	print('')
-	print (vermelho + '[*] ID > '+azul+message.sid+end)
-	print('')
+	try:
+		message = client.messages.create(
+		    body = body, 	
+	    	to = to,
+	    	from_ = from_,
+		)
+		print('')
+		print(verde +'✉ SMS - Flooder ✉ %s' % to)
+		print('')
+		print (vermelho + '[*] ID > '+azul+message.sid+end)
+		print('')
+		time.sleep(25)
+	except:
+		pass
+
 
 def SendImage(to):
 	print('')
@@ -257,9 +265,8 @@ def SpamNumber():
 
 	for i in range(1, FloodNumber+1):
 		SendMessage(to)
-		print purpleClaro + "\r ✉ SMS - Flooder ✉ - Total enviados > %i" % i
-		print('')
-
+	print purpleClaro + "\r ✉ SMS - Flooder ✉ - Total enviados > %i" % i
+	print('')
 
 def SPAM():
 	global body, to, from_
