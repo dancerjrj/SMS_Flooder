@@ -9,10 +9,11 @@ import os, sys
 import time
 
 os.system('clear')
-ACCOUNT_SID = "AC9f8ce3cb6f9628f0cb9c3e5a0d0a527b"
-AUTH_TOKEN = "6d6d89b899dd59cf58c8849fdddc64a5"
+
+account = "AC9f8ce3cb6f9628f0cb9c3e5a0d0a527b"
+token = "6d6d89b899dd59cf58c8849fdddc64a5"
 from_ = "+553140427107"
-client = Client(ACCOUNT_SID, AUTH_TOKEN)
+client = Client(account, token)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
 end = '\033[0m'
