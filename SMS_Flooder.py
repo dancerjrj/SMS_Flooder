@@ -9,9 +9,9 @@ import os, sys
 import time
 
 os.system('clear')
-ACCOUNT_SID = "AC1e46be9639857b6ce6ef59fa8aec2fbd"
-AUTH_TOKEN = "b0f05380496d3adc164af2ee6612dd75"
-from_ = "+14159642806"
+ACCOUNT_SID = "AC9f8ce3cb6f9628f0cb9c3e5a0d0a527b"
+AUTH_TOKEN = "6d6d89b899dd59cf58c8849fdddc64a5"
+from_ = "+553140427107"
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
