@@ -1,25 +1,25 @@
 #/usr/bin/python3
 # -*- coding:utf-8 -*-
 try:
-	from twilio.rest import TwilioRestClient
+	from twilio.rest import Client
 except:
-	print "pip install twilio="
+	print ("pip install twilio=")
 
 import os, sys
 import time
 
 os.system('clear')
-ACCOUNT_SID = "AC1e46be9639857b6ce6ef59fa8aec2fbd"
-AUTH_TOKEN = "b0f05380496d3adc164af2ee6612dd75"
-from_ = "+14159642806"
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+ACCOUNT_SID = "AC7c326140b219712c63fab1fd5a2841fa"
+AUTH_TOKEN = "b2fa72320beb5841da8641ae5d5065f9"
+from_ = "+556140421608"
+client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
 end = '\033[0m'
 # Colors
 
 W  = '\033[0m'  # white (default)
-R  = '\033[31m' # red
+R  = '\033[31m' # redAC7c326140b219712c63fab1fd5a2841fa
 G  = '\033[1;32m' # green bold
 O  = '\033[33m' # orange
 B  = '\033[34m' # blue
