@@ -1,19 +1,20 @@
-#/usr/bin/python3
-# -*- coding:utf-8 -*-
-try:
-	from twilio.rest import Client
-except:
-	print "pip install twilio="
+from twilio.rest import Client
 
-import os, sys
-import time
+# Your Account SID from twilio.com/console
+account_sid = "AC7c326140b219712c63fab1fd5a2841fa"
+# Your Auth Token from twilio.com/console
+auth_token  = "b2fa72320beb5841da8641ae5d5065f9"
 
-os.system('clear')
+client = Client(account_sid, auth_token)
 
-account = "AC9f8ce3cb6f9628f0cb9c3e5a0d0a527b"
-token = "6d6d89b899dd59cf58c8849fdddc64a5"
-from_ = "+553140427107"
-client = Client(account, token)
+message = client.messages.create(
+    to="+556140421608", 
+    from_="+5521980536720",
+    body="💀💀💀💀")
+
+print(message.sid)
+
+client = Client(account_sid, auth_token)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
 end = '\033[0m'
