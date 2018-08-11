@@ -5,7 +5,7 @@ account_sid = "AC7c326140b219712c63fab1fd5a2841fa"
 # Your Auth Token from twilio.com/console
 auth_token  = "b2fa72320beb5841da8641ae5d5065f9"
 
-client = Client(account_sid, auth_token)
+client = TwilioRestClient(account_sid, auth_token)
 
 message = client.messages.create(
     to="+556140421608", 
