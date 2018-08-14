@@ -1,18 +1,21 @@
 #/usr/bin/python3
 # -*- coding:utf-8 -*-
 try:
-	from twilio.rest import TwilioRestClient
-except:
-	print "pip install twilio="
+	from twilio.rest import Client
 
-import os, sys
-import time
+# Your Account SID from twilio.com/console
+account_sid = "AC03b0c4e991e09570d97d5b19b8015cd1"
+# Your Auth Token from twilio.com/console
+auth_token  = "a6549b21361cb88db830709ff29e6c23"
 
-os.system('clear')
-ACCOUNT_SID = "AC1e46be9639857b6ce6ef59fa8aec2fbd"
-AUTH_TOKEN = "b0f05380496d3adc164af2ee6612dd75"
-from_ = "+14159642806"
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+client = Client(account_sid, auth_token)
+
+message = client.messages.create(
+    to="+5521964460233", 
+    from_="+551141182146",
+    body="Hello from Python!")
+
+print(message.sid)
 
 global end, verde, azul, amarelo, vermelho, purpleClaro, normal, cyanClaro, W, R, G, O, B, P, C, GR
 end = '\033[0m'
